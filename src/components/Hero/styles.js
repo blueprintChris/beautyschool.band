@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
-  background: url('mirror.jpg');
+  background: url('images/mirror.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

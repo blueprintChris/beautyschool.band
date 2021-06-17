@@ -4,7 +4,7 @@ import { Wrapper, Logo } from './styles';
 const Hero = () => {
   return (
     <Wrapper>
-      <Logo src='logo.png' />
+      <Logo src='images/logo.png' />
     </Wrapper>
   );
 };
