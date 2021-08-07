@@ -2,17 +2,18 @@ import React from 'react';
 import { ThemeProvider } from 'styled-components';
 import Navbar from './components/Navbar/Navbar';
 import Hero from './components/Hero/Hero';
-import Bio from './components/Bio/Bio';
+import MainContent from './components/MainContent/MainContent';
+import { AppWrapper } from './styles';
 import { theme } from './theme';
 
 const App = () => {
   return (
     <ThemeProvider theme={theme}>
-      <div className='App'>
+      <AppWrapper>
         <Navbar />
         <Hero />
-        <Bio />
-      </div>
+        <MainContent />
+      </AppWrapper>
     </ThemeProvider>
   );
 };

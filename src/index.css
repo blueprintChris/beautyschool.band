@@ -9,6 +9,17 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+html,
+body {
+  min-height: 100%;
+  height: 100%;
+}
+
+@font-face {
+  font-family: 'BeautySchool';
+  src: local('BeautySchool'), url('./fonts/HelveticaNeueLTStd-BlkEx.otf') format('opentype');
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
 }
