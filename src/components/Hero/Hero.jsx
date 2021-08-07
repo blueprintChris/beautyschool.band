@@ -1,11 +1,14 @@
 import React from 'react';
-import { Wrapper, Logo } from './styles';
+import { Wrapper, Logo, LogoWrapper } from './styles';
 import Video from '../Video/Video';
 
 const Hero = () => {
   return (
     <Wrapper>
-      <Logo src='images/logo.png' />
+      <LogoWrapper>
+        <Logo>beauty school</Logo>
+      </LogoWrapper>
+
       <Video />
     </Wrapper>
   );

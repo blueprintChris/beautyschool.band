@@ -49,4 +49,12 @@ export const Bio = styled.div`
   width: 100%;
   padding: 2rem;
   border: 1px solid ${props => props.theme.colours.darkGold};
+  font-family: Futura;
+  font-weight: 700;
+
+  h1 {
+    font-family: BeautySchool;
+    letter-spacing: 1px;
+    font-weight: 400;
+  }
 `;

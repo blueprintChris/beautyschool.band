@@ -9,7 +9,7 @@ const MainContent = () => {
       <Content>
         <Row>
           <Bio>
-            <h1>Bio</h1>
+            <h1>bio</h1>
             <p>
               Leeds-based guitar-licking pop-punk that writes songs about monsters, dementia and dying of heart attacks.
             </p>
@@ -22,6 +22,7 @@ const MainContent = () => {
         <Row>
           <YouTubeVideo />
         </Row>
+        <Row></Row>
       </Content>
     </Wrapper>
   );

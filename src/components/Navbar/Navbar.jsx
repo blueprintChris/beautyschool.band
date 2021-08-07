@@ -22,9 +22,9 @@ const Navbar = () => {
     <Wrapper scrolledPastHero={scrolledPastHero}>
       <Nav>
         <NavWrapper>
-          <NavItem to='/bio'>Listen</NavItem>
-          <NavItem to='/listen'>Merch</NavItem>
-          <NavItem to='/dates'>Tour</NavItem>
+          <NavItem to='/bio'>listen</NavItem>
+          <NavItem to='/listen'>merch</NavItem>
+          <NavItem to='/dates'>tour</NavItem>
         </NavWrapper>
         <NavWrapper>
           <IconLink href='https://twitter.com/beautyschoollds' site='twitter' target='_blank' />

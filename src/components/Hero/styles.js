@@ -12,21 +12,23 @@ export const Wrapper = styled.div`
   align-items: center;
 `;
 
-export const Logo = styled.img`
-  height: 100px;
+export const LogoWrapper = styled.div`
   z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 2rem;
+  top: 1rem;
+  z-index: 1;
+`;
 
-  /* border: solid;
-  border-width: 6px;
-  border-image-slice: 1;
-  border-image-source: ${props =>
-    `linear-gradient(180deg, ${props.theme.colours.darkGold} 0%, ${props.theme.colours.lightGold} 100%)`};
-  padding: 2rem;
-  background-color: rgba(0, 0, 0, 0.2); */
+export const Logo = styled.h1`
+  margin: 0;
+  color: white;
+  font-family: BeautySchool;
+  font-size: 40px;
 `;

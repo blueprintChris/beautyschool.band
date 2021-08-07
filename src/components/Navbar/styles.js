@@ -39,6 +39,13 @@ export const NavWrapper = styled.div`
   display: flex;
   justify-content: 'center';
   align-items: 'center';
+
+  h1 {
+    color: white;
+    font-family: BeautySchool;
+    font-size: 40px;
+    white-space: normal;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -57,6 +64,7 @@ export const Wrapper = styled.div`
   transition-property: background-color height;
   padding: 0 3rem;
   box-sizing: border-box;
+  z-index: 1001;
 
   ${NavItem} {
     color: ${props => (props.scrolledPastHero ? props.theme.colours.black : props.theme.colours.white)};
