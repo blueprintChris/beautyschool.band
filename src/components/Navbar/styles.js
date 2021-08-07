@@ -74,6 +74,10 @@ export const Wrapper = styled.div`
       background-color: ${props => (props.scrolledPastHero ? 'black' : 'white')};
       height: ${props => (props.scrolledPastHero ? '2rem' : '3rem')};
       width: ${props => (props.scrolledPastHero ? '2rem' : '3rem')};
+
+      &:hover {
+        background-color: ${props => (props.scrolledPastHero ? props.theme.colours.darkGold : 'black')};
+      }
     }
   }
 `;
