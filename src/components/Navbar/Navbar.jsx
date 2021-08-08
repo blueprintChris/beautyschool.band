@@ -2,10 +2,10 @@ import React, { useEffect, useState } from 'react';
 import Hamburger from '../Hamburger/Hamburger';
 import { Wrapper, Nav, NavItem, NavWrapper, IconLink, HamburgerWrapper } from './styles';
 
-const Navbar = () => {
+const Navbar = props => {
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
-  const [isHidden, setIsHidden] = useState(true);
+  const { setIsNavBarHidden, isNavBarHidden } = props;
 
   useEffect(() => {
     window.addEventListener('scroll', listenToScroll);
@@ -41,11 +41,11 @@ const Navbar = () => {
   };
 
   const handleMenu = () => {
-    setIsHidden(!isHidden);
+    setIsNavBarHidden(!isNavBarHidden);
   };
 
   const handleNavClick = () => {
-    setIsHidden(true);
+    setIsNavBarHidden(true);
   };
 
   return (
@@ -55,7 +55,7 @@ const Navbar = () => {
           <Hamburger handleClick={handleMenu} />
         </HamburgerWrapper>
       )}
-      <Wrapper scrolledPastHero={scrolledPastHero} isMobile={isMobile} isHidden={isHidden}>
+      <Wrapper scrolledPastHero={scrolledPastHero} isMobile={isMobile} isHidden={isNavBarHidden}>
         <Nav>
           <NavWrapper>
             <NavItem scroll={scrollWithOffset} to='/#bio' onClick={handleNavClick}>
