@@ -52,9 +52,30 @@ export const ImgLink = styled.a`
     max-width: 100%;
     max-height: 450px;
 
-    @media (max-width: 768px) {
+    @media (max-width: 1024px) {
       width: 100%;
       max-height: 100%;
     }
+  }
+`;
+
+export const Field = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 2rem;
+
+  p {
+    text-align: left;
+    width: 100%;
+  }
+
+  h2 {
+    margin: 0;
+    font-size: 2rem;
+    color: white;
+    font-family: BeautySchool, Arial, Helvetica, sans-serif;
+    text-align: left;
+    width: 100%;
   }
 `;

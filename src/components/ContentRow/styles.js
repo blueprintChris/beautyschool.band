@@ -30,7 +30,7 @@ export const Row = styled.div`
   align-items: center;
   width: 100%;
 
-  @media (max-width: 768px) {
+  @media (max-width: 1024px) {
     flex-direction: column;
   }
 `;

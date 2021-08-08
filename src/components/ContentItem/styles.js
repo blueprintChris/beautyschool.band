@@ -6,21 +6,8 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-bottom: 2rem;
   padding-right: 2rem;
   box-sizing: border-box;
-
-  p {
-    @media (max-width: 1024px) {
-      font-size: 30px;
-    }
-  }
-
-  p {
-    @media (max-width: 768px) {
-      font-size: 20px;
-    }
-  }
 
   h1 {
     margin: 0;
@@ -32,7 +19,11 @@ export const Wrapper = styled.div`
     width: 100%;
   }
 
-  @media (max-width: 768px) {
+  &:last-child {
+    padding-right: 0;
+  }
+
+  @media (max-width: 1024px) {
     flex-direction: column;
     padding: 0;
     padding-bottom: 2rem;

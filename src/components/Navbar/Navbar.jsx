@@ -18,13 +18,25 @@ const Navbar = () => {
     }
   };
 
+  const scrollWithOffset = el => {
+    const yCoordinate = el.getBoundingClientRect().top + window.pageYOffset;
+    const yOffset = -50;
+    window.scrollTo({ top: yCoordinate + yOffset, behavior: 'smooth' });
+  };
+
   return (
     <Wrapper scrolledPastHero={scrolledPastHero}>
       <Nav>
         <NavWrapper>
-          <NavItem to='/bio'>listen</NavItem>
-          <NavItem to='/listen'>merch</NavItem>
-          <NavItem to='/dates'>tour</NavItem>
+          <NavItem scroll={scrollWithOffset} to='/#bio'>
+            bio
+          </NavItem>
+          <NavItem scroll={scrollWithOffset} to='/#merch'>
+            merch
+          </NavItem>
+          <NavItem scroll={scrollWithOffset} to='/#contact'>
+            contact
+          </NavItem>
         </NavWrapper>
         <NavWrapper>
           <IconLink href='https://twitter.com/beautyschoollds' site='twitter' target='_blank' />

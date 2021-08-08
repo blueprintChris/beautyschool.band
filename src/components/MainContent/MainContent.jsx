@@ -1,5 +1,5 @@
 import React from 'react';
-import { Wrapper, Content, ImgLink } from './styles';
+import { Wrapper, Content, ImgLink, Field } from './styles';
 import Spotify from '../Spotify/Spotify';
 import YouTubeVideo from '../YouTubeVideo/YouTubeVideo';
 import ContentRow from '../ContentRow/ContentRow';
@@ -10,7 +10,7 @@ const MainContent = () => {
     <Wrapper>
       <Content>
         <ContentRow>
-          <ContentItem header='bio'>
+          <ContentItem header='bio' id='bio'>
             <p>
               Beauty School’s formation built from modest intentions, from stalwarts within the Leeds music scene,
               lyricist Joe Cabrera alongside guitarist Dan Shaw started Beauty School as the result of unfinished
@@ -22,18 +22,34 @@ const MainContent = () => {
           </ContentItem>
         </ContentRow>
         <ContentRow>
-          <ContentItem header='merch'>
+          <ContentItem header='merch' id='merch'>
             <ImgLink href='https://beautyschooluk.bandcamp.com/merch' target='_blank'>
               <img src='images/merch.png' alt='get merch' />
             </ImgLink>
           </ContentItem>
-          <ContentItem header='listen'>
+          <ContentItem header='listen' id='listen'>
             <Spotify />
           </ContentItem>
         </ContentRow>
         <ContentRow>
-          <ContentItem header='watch'>
+          <ContentItem header='watch' id='watch'>
             <YouTubeVideo id='gjIlcRfHNVc' />
+          </ContentItem>
+        </ContentRow>
+        <ContentRow>
+          <ContentItem header='contact' id='contact'>
+            <Field>
+              <h2>band</h2>
+              <p>beautyschoolleeds@gmail.com</p>
+            </Field>
+            <Field>
+              <h2>management</h2>
+              <p>jd@slamdunkrecords.com</p>
+            </Field>
+            <Field>
+              <h2>label</h2>
+              <p>sam@futuresoundgroup.com</p>
+            </Field>
           </ContentItem>
         </ContentRow>
       </Content>
@@ -42,3 +58,7 @@ const MainContent = () => {
 };
 
 export default MainContent;
+
+// beautyschoolleeds@gmail.com
+// Management: JD@slamdunkrecords.com
+// Label: sam@futuresoundgroup.com

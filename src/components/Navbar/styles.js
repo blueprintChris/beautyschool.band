@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
-export const NavItem = styled(NavLink)`
+export const NavItem = styled(HashLink)`
   height: 100%;
   display: flex;
   justify-content: center;
