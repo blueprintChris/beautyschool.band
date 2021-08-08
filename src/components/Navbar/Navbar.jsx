@@ -41,7 +41,6 @@ const Navbar = () => {
   };
 
   const handleMenu = () => {
-    console.log('clicked');
     setIsHidden(!isHidden);
   };
 
