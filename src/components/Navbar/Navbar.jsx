@@ -52,7 +52,7 @@ const Navbar = props => {
     <>
       {isMobile && (
         <HamburgerWrapper>
-          <Hamburger handleClick={handleMenu} />
+          <Hamburger handleClick={handleMenu} isHidden={isNavBarHidden} />
         </HamburgerWrapper>
       )}
       <Wrapper scrolledPastHero={scrolledPastHero} isMobile={isMobile} isHidden={isNavBarHidden}>
