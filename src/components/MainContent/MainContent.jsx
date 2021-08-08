@@ -40,15 +40,15 @@ const MainContent = () => {
           <ContentItem header='contact' id='contact'>
             <Field>
               <h2>band</h2>
-              <p>beautyschoolleeds@gmail.com</p>
+              <a href='mailto:beautyschoolleeds@gmail.com'>beautyschoolleeds@gmail.com</a>
             </Field>
             <Field>
               <h2>management</h2>
-              <p>jd@slamdunkrecords.com</p>
+              <a href='mailto:jd@slamdunkrecords.com'>jd@slamdunkrecords.com</a>
             </Field>
             <Field>
               <h2>label</h2>
-              <p>sam@futuresoundgroup.com</p>
+              <a href='mailto:sam@futuresoundgroup.com'>sam@futuresoundgroup.com</a>
             </Field>
           </ContentItem>
         </ContentRow>

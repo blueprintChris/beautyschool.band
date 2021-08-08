@@ -17,7 +17,23 @@ export const LogoWrapper = styled.div`
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 1rem;
+  top: 0.8rem;
+
+  @media (max-width: 1400px) {
+    left: 10rem;
+    top: 1.4rem;
+    font-size: 30px;
+  }
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
+
+  @media (max-width: 800px) {
+    right: auto;
+    left: 2rem;
+    display: flex;
+  }
 `;
 
 export const Logo = styled.h1`
@@ -25,4 +41,8 @@ export const Logo = styled.h1`
   color: white;
   font-family: BeautySchool;
   font-size: 40px;
+
+  @media (max-width: 1400px) {
+    font-size: 30px;
+  }
 `;
