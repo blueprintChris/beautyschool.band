@@ -1,28 +1,41 @@
 import React from 'react';
-import { Wrapper, Content, Row, Bio } from './styles';
+import { Wrapper, Content, ImgLink } from './styles';
 import Spotify from '../Spotify/Spotify';
 import YouTubeVideo from '../YouTubeVideo/YouTubeVideo';
+import ContentRow from '../ContentRow/ContentRow';
+import ContentItem from '../ContentItem/ContentItem';
 
 const MainContent = () => {
   return (
-    <Wrapper id='bio'>
+    <Wrapper>
       <Content>
-        <Row>
-          <Bio>
-            <h1>bio</h1>
+        <ContentRow>
+          <ContentItem header='bio'>
             <p>
-              Leeds-based guitar-licking pop-punk that writes songs about monsters, dementia and dying of heart attacks.
+              Beauty School’s formation built from modest intentions, from stalwarts within the Leeds music scene,
+              lyricist Joe Cabrera alongside guitarist Dan Shaw started Beauty School as the result of unfinished
+              business and new things to say. With the introduction of bassist Liam Craig, guitarist Jordan Hill and
+              drummer Charlie Thomas, Beauty School fully formed. Alongside the band’s signing with Slam Dunk Records,
+              Beauty School are set to release their debut full-length record in early 2022; looking to fuse diverse,
+              wide-ranging influences into what will essentially be, sad boomer anthems - buckle up.
             </p>
-          </Bio>
-        </Row>
-        <Row>
-          <Spotify />
-          <Spotify />
-        </Row>
-        <Row>
-          <YouTubeVideo />
-        </Row>
-        <Row></Row>
+          </ContentItem>
+        </ContentRow>
+        <ContentRow>
+          <ContentItem header='merch'>
+            <ImgLink href='https://beautyschooluk.bandcamp.com/merch' target='_blank'>
+              <img src='images/merch.png' alt='get merch' />
+            </ImgLink>
+          </ContentItem>
+          <ContentItem header='listen'>
+            <Spotify />
+          </ContentItem>
+        </ContentRow>
+        <ContentRow>
+          <ContentItem header='watch'>
+            <YouTubeVideo id='gjIlcRfHNVc' />
+          </ContentItem>
+        </ContentRow>
       </Content>
     </Wrapper>
   );

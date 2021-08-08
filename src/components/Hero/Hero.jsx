@@ -8,7 +8,6 @@ const Hero = () => {
       <LogoWrapper>
         <Logo>beauty school</Logo>
       </LogoWrapper>
-
       <Video />
     </Wrapper>
   );
