@@ -6,7 +6,7 @@ const ContentItem = props => {
 
   return (
     <Wrapper id={id}>
-      <h1>{header}</h1>
+      {header && <h1>{header}</h1>}
       {children}
     </Wrapper>
   );

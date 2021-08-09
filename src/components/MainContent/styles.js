@@ -45,6 +45,9 @@ export const HeaderWrapper = styled.div`
 `;
 
 export const ImgLink = styled.a`
+  display: flex;
+
+  align-items: center;
   height: 100%;
   width: 100%;
 
