@@ -9,7 +9,7 @@ export const NavItem = styled(HashLink)`
   font-weight: 400;
   text-decoration: none;
   font-size: ${props => props.theme.fonts.nav};
-  font-family: 'BeautySchool';
+  font-family: BeautySchool, Futura, Arial, Helvetica, sans-serif;
   margin-right: 2rem;
   transition: 0.2s ease;
   transition-property: color font-size;
@@ -37,12 +37,12 @@ export const IconLink = styled.a`
 
 export const NavWrapper = styled.div`
   display: flex;
-  justify-content: 'center';
+  justify-content: ${props => props.position};
   align-items: 'center';
 
   h1 {
     color: white;
-    font-family: BeautySchool;
+    font-family: BeautySchool, Futura, Arial, Helvetica, sans-serif;
     font-size: 40px;
     white-space: normal;
   }

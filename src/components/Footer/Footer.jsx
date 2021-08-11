@@ -1,14 +1,24 @@
 import React from 'react';
-import { ImgLink } from '../MainContent/styles';
-import { Wrapper, Container } from './styles';
+import { Wrapper, Container, ImgWrapper, TextWrapper } from './styles';
 
 const Footer = () => {
   return (
     <Wrapper>
       <Container>
-        <ImgLink>
-          <img src='images/slam-dunk-cropped.png' target='_blank' alt='Slam Dunk Records' height='50' />
-        </ImgLink>
+        <ImgWrapper>
+          <a href='https://slamdunkrecords.com' target='_blank' rel='noreferrer'>
+            <img src='images/slam-dunk-cropped.png' alt='Slam Dunk Records' height='40' />
+          </a>
+          <a href='https://www.futuresoundgroup.com/' target='_blank' rel='noreferrer'>
+            <img src='images/fs-group-400.jpg' target='_blank' alt='Futuresound Group' height='40' />
+          </a>
+        </ImgWrapper>
+        <TextWrapper>
+          <span>© 2021 beauty school</span>
+          <span>
+            &nbsp; website by <a href='mailto:me@blueprintchris.co.uk'>blueprintchris</a>
+          </span>
+        </TextWrapper>
       </Container>
     </Wrapper>
   );

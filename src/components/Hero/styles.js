@@ -17,7 +17,7 @@ export const LogoWrapper = styled.div`
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 0.8rem;
+  top: 1rem;
 
   @media (max-width: 1400px) {
     left: 10rem;
@@ -39,7 +39,7 @@ export const LogoWrapper = styled.div`
 export const Logo = styled.h1`
   margin: 0;
   color: white;
-  font-family: BeautySchool;
+  font-family: BeautySchool, Arial, Helvetica, sans-serif;
   font-size: 40px;
 
   @media (max-width: 1400px) {

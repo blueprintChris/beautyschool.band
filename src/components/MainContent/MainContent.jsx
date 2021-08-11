@@ -4,13 +4,22 @@ import Spotify from '../Spotify/Spotify';
 import YouTubeVideo from '../YouTubeVideo/YouTubeVideo';
 import ContentRow from '../ContentRow/ContentRow';
 import ContentItem from '../ContentItem/ContentItem';
-// import Footer from '../Footer/Footer';
+import Socials from '../Socials/Socials';
+import Footer from '../Footer/Footer';
 
-const MainContent = () => {
+const MainContent = props => {
+  const { isMobile } = props;
   return (
     <>
       <Wrapper>
         <Content>
+          {isMobile && (
+            <ContentRow>
+              <ContentItem header='socials'>
+                <Socials position='flex-start' />
+              </ContentItem>
+            </ContentRow>
+          )}
           <ContentRow>
             <ContentItem header='bio' id='bio'>
               <p>
@@ -53,15 +62,10 @@ const MainContent = () => {
                 <a href='mailto:sam@futuresoundgroup.com'>sam@futuresoundgroup.com</a>
               </Field>
             </ContentItem>
-            <ContentItem>
-              <ImgLink href='https://www.slamdunkrecords.com/' target='_blank'>
-                <img src='images/slam-dunk-cropped.png' alt='get merch' />
-              </ImgLink>
-            </ContentItem>
           </ContentRow>
+          <Footer />
         </Content>
       </Wrapper>
-      {/* <Footer /> */}
     </>
   );
 };

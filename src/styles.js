@@ -9,10 +9,10 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     margin: 0;
-    font-family: 'Roboto', 'Hind', sans-serif;
+    font-family: 'Futura', 'Roboto', 'Hind', sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    ${props => !props.isNavBarHidden && 'overflow: hidden'};
+    ${props => !props.isNavBarHidden && props.isMobile && 'overflow: hidden'};
   }
 
   html,

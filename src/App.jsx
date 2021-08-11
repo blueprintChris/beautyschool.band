@@ -8,14 +8,20 @@ import { theme } from './theme';
 
 const App = () => {
   const [isNavBarHidden, setIsNavBarHidden] = useState(true);
+  const [isMobile, setIsMobile] = useState(false);
 
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyle isNavBarHidden={isNavBarHidden} />
+      <GlobalStyle isNavBarHidden={isNavBarHidden} isMobile={isMobile} />
       <AppWrapper>
-        <Navbar setIsNavBarHidden={setIsNavBarHidden} isNavBarHidden={isNavBarHidden} />
+        <Navbar
+          setIsNavBarHidden={setIsNavBarHidden}
+          isNavBarHidden={isNavBarHidden}
+          isMobile={isMobile}
+          setIsMobile={setIsMobile}
+        />
         <Hero />
-        <MainContent />
+        <MainContent isMobile={isMobile} />
       </AppWrapper>
     </ThemeProvider>
   );

@@ -1,20 +1,13 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Hamburger from '../Hamburger/Hamburger';
-import { Wrapper, Nav, NavItem, NavWrapper, IconLink, HamburgerWrapper } from './styles';
+import Socials from '../Socials/Socials';
+import { Wrapper, Nav, NavItem, NavWrapper, HamburgerWrapper } from './styles';
 
 const Navbar = props => {
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
-  const { setIsNavBarHidden, isNavBarHidden } = props;
+  const { setIsNavBarHidden, isNavBarHidden, isMobile, setIsMobile } = props;
 
-  useEffect(() => {
-    window.addEventListener('scroll', listenToScroll);
-    window.addEventListener('resize', getWindowDimensions);
-
-    getWindowDimensions();
-  }, []);
-
-  const getWindowDimensions = () => {
+  const getWindowDimensions = useCallback(() => {
     const { innerWidth: width } = window;
 
     if (width <= 800) {
@@ -22,7 +15,14 @@ const Navbar = props => {
     } else {
       setIsMobile(false);
     }
-  };
+  }, [setIsMobile]);
+
+  useEffect(() => {
+    window.addEventListener('scroll', listenToScroll);
+    window.addEventListener('resize', getWindowDimensions);
+
+    getWindowDimensions();
+  }, [getWindowDimensions]);
 
   const listenToScroll = () => {
     const position = window.pageYOffset;
@@ -71,13 +71,7 @@ const Navbar = props => {
               contact
             </NavItem>
           </NavWrapper>
-          <NavWrapper>
-            <IconLink href='https://twitter.com/beautyschoollds' site='twitter' target='_blank' />
-            <IconLink href='https://instagram.com/beautyschooluk' site='instagram' target='_blank' />
-            <IconLink href='https://open.spotify.com/artist/46yPZXaKNR5nkEqMzhifG6' site='spotify' target='_blank' />
-            <IconLink href='https://www.youtube.com/channel/UCwkFeK8zVScddmxWbjwcfAg' site='youtube' target='_blank' />
-            <IconLink href='https://www.facebook.com/beautyschooluk/' site='facebook' target='_blank' />
-          </NavWrapper>
+          <Socials position={isMobile ? 'center' : 'flex-end'} />
         </Nav>
       </Wrapper>
     </>

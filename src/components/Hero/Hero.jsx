@@ -6,7 +6,9 @@ const Hero = () => {
   return (
     <Wrapper>
       <LogoWrapper>
-        <Logo>beauty school</Logo>
+        <Logo>
+          <img src='images/logo.png' height='50' alt='Beauty School' />
+        </Logo>
       </LogoWrapper>
       <Video />
     </Wrapper>

@@ -36,7 +36,6 @@ export const HeaderWrapper = styled.div`
   flex-direction: column;
   width: 100%;
   padding: 2rem;
-  font-family: Futura;
   font-weight: 700;
 
   p {
