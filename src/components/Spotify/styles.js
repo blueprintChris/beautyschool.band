@@ -2,5 +2,11 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   width: 100%;
-  height: 100%;
+`;
+
+export const SpotifyPlayer = styled.iframe`
+  width: 100%;
+  height: 450px;
+  max-height: 450px;
+  overflow: auto;
 `;

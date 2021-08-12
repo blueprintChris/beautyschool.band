@@ -5,7 +5,7 @@ import { Wrapper, Nav, NavItem, NavWrapper, HamburgerWrapper } from './styles';
 
 const Navbar = props => {
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
-  const { setIsNavBarHidden, isNavBarHidden, isMobile, setIsMobile } = props;
+  const { setIsNavBarHidden, isNavBarHidden, isMobile, setIsMobile, refs } = props;
 
   const getWindowDimensions = useCallback(() => {
     const { innerWidth: width } = window;
@@ -44,7 +44,9 @@ const Navbar = props => {
     setIsNavBarHidden(!isNavBarHidden);
   };
 
-  const handleNavClick = () => {
+  const handleNavClick = value => {
+    scrollWithOffset(refs[value].current);
+
     setIsNavBarHidden(true);
   };
 
@@ -58,18 +60,10 @@ const Navbar = props => {
       <Wrapper scrolledPastHero={scrolledPastHero} isMobile={isMobile} isHidden={isNavBarHidden}>
         <Nav>
           <NavWrapper>
-            <NavItem scroll={scrollWithOffset} to='/#bio' onClick={handleNavClick}>
-              bio
-            </NavItem>
-            <NavItem scroll={scrollWithOffset} to='/#merch' onClick={handleNavClick}>
-              merch
-            </NavItem>
-            <NavItem scroll={scrollWithOffset} to='/#listen' onClick={handleNavClick}>
-              listen
-            </NavItem>
-            <NavItem scroll={scrollWithOffset} to='/#contact' onClick={handleNavClick}>
-              contact
-            </NavItem>
+            <NavItem onClick={() => handleNavClick('bio')}>bio</NavItem>
+            <NavItem onClick={() => handleNavClick('merch')}>merch</NavItem>
+            <NavItem onClick={() => handleNavClick('listen')}>listen</NavItem>
+            <NavItem onClick={() => handleNavClick('contact')}>contact</NavItem>
           </NavWrapper>
           <Socials position={isMobile ? 'center' : 'flex-end'} />
         </Nav>

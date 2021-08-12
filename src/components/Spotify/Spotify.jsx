@@ -1,19 +1,15 @@
 import React from 'react';
-import { Wrapper } from './styles';
+import { SpotifyPlayer } from './styles';
 
 const Spotify = () => {
   return (
-    <Wrapper>
-      <iframe
-        src='https://open.spotify.com/embed/artist/46yPZXaKNR5nkEqMzhifG6?theme=1&view=list'
-        width='100%'
-        height='450'
-        frameBorder='0'
-        allowtransparency='true'
-        allow='encrypted-media'
-        title='Spotify'
-      />
-    </Wrapper>
+    <SpotifyPlayer
+      src='https://open.spotify.com/embed/artist/46yPZXaKNR5nkEqMzhifG6?theme=1&view=list'
+      frameBorder='0'
+      allowtransparency='true'
+      allow='encrypted-media'
+      title='Spotify'
+    />
   );
 };
 

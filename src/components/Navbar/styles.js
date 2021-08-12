@@ -1,18 +1,20 @@
 import styled from 'styled-components';
-import { HashLink } from 'react-router-hash-link';
 
-export const NavItem = styled(HashLink)`
+export const NavItem = styled.button`
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
   font-weight: 400;
   text-decoration: none;
+  background: none;
+  border: none;
   font-size: ${props => props.theme.fonts.nav};
   font-family: BeautySchool, Futura, Arial, Helvetica, sans-serif;
   margin-right: 2rem;
   transition: 0.2s ease;
   transition-property: color font-size;
+  cursor: pointer;
 
   &:last-child {
     margin: 0;
@@ -39,6 +41,7 @@ export const NavWrapper = styled.div`
   display: flex;
   justify-content: ${props => props.position};
   align-items: 'center';
+  width: 100%;
 
   h1 {
     color: white;
