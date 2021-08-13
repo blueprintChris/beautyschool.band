@@ -1,6 +1,7 @@
 import styled, { createGlobalStyle } from 'styled-components';
 import BeautySchoolFont from './fonts/HelveticaNeueLTStd-BlkEx.otf';
 import FuturaFont from './fonts/futura.woff';
+import { CookieBannerUniversal } from 'react-cookie-banner';
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -40,4 +41,47 @@ export const GlobalStyle = createGlobalStyle`
 
 export const AppWrapper = styled.div`
   min-height: 100vh;
+`;
+
+export const CookieBannerStyled = styled(CookieBannerUniversal)`
+  background-color: black;
+  max-width: 500px;
+  height: 50px;
+  position: fixed;
+  bottom: 2rem;
+  left: 2rem;
+  right: 2rem;
+  border: 1px solid white;
+  transition: 0.5s ease;
+  transition-property: position bottom background-color;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1001;
+
+  button {
+    height: 100%;
+    background-color: ${props => props.theme.colours.darkGold};
+    color: white;
+    border: 1px solid white;
+    cursor: pointer;
+    font-family: Futura, Arial, Helvetica, sans-serif;
+  }
+
+  button:hover {
+    background-color: ${props => props.theme.colours.lightGold};
+  }
+
+  span {
+    font-family: Futura, Arial, Helvetica, sans-serif;
+    color: white;
+    display: flex;
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  a {
+    color: ${props => props.theme.colours.lightGold};
+    text-decoration: none;
+  }
 `;
