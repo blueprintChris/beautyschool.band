@@ -11,7 +11,7 @@ export const NavItem = styled.button`
   border: none;
   font-size: ${props => props.theme.fonts.nav};
   font-family: BeautySchool, Futura, Arial, Helvetica, sans-serif;
-  margin-right: 2rem;
+  margin-right: 0.5rem;
   transition: 0.2s ease;
   transition-property: color font-size;
   cursor: pointer;

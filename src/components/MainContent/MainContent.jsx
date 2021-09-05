@@ -9,6 +9,7 @@ import Footer from '../Footer/Footer';
 import Contact from '../Contact/Contact';
 import ImgLink from '../ImgLink/ImgLink';
 import Bio from '../Bio/Bio';
+import TourDates from '../TourDates/TourDates';
 
 const MainContent = props => {
   const { isMobile, refs } = props;
@@ -26,6 +27,11 @@ const MainContent = props => {
         <ContentRow>
           <ContentItem header='bio' ref={refs.bio}>
             <Bio />
+          </ContentItem>
+        </ContentRow>
+        <ContentRow>
+          <ContentItem header='tour' ref={refs.tour}>
+            <TourDates />
           </ContentItem>
         </ContentRow>
         <ContentRow>

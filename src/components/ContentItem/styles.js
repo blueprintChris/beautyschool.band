@@ -8,6 +8,8 @@ export const Wrapper = styled.div`
   align-items: flex-start;
   padding-right: 2rem;
   box-sizing: border-box;
+  color: white;
+  font-size: 2rem;
 
   h1 {
     margin: 0;

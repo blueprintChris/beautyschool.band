@@ -61,6 +61,7 @@ const Navbar = props => {
         <Nav>
           <NavWrapper>
             <NavItem onClick={() => handleNavClick('bio')}>bio</NavItem>
+            <NavItem onClick={() => handleNavClick('tour')}>tour</NavItem>
             <NavItem onClick={() => handleNavClick('merch')}>merch</NavItem>
             <NavItem onClick={() => handleNavClick('listen')}>listen</NavItem>
             <NavItem onClick={() => handleNavClick('contact')}>contact</NavItem>
