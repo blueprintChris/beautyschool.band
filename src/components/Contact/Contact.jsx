@@ -1,22 +1,38 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Field } from './styles';
 
 const Contact = () => {
+  const [contacts, setContacts] = useState([]);
+
+  useEffect(() => {
+    (async () => {
+      const response = await fetch('https://got4yfo1jg.execute-api.eu-west-2.amazonaws.com/live/text/contact/contact');
+      const contact = await response.text();
+      const splitContact = contact.replace(/\r/g, '').split('\n');
+      const contacts = splitContact.map(item => {
+        const spl = item.split(':');
+        return { title: spl[0], emails: spl[1].split(',').map(item => item.trim()) };
+      });
+
+      setContacts(contacts);
+    })();
+  }, []);
+
   return (
-    <>
-      <Field>
-        <h2>band</h2>
-        <a href='mailto:beautyschoolleeds@gmail.com'>beautyschoolleeds@gmail.com</a>
-      </Field>
-      <Field>
-        <h2>management</h2>
-        <a href='mailto:jd@slamdunkrecords.com'>jd@slamdunkrecords.com</a>
-      </Field>
-      <Field>
-        <h2>label</h2>
-        <a href='mailto:sam@futuresoundgroup.com'>sam@futuresoundgroup.com</a>
-      </Field>
-    </>
+    contacts.length > 0 && (
+      <>
+        {contacts.map(contact => (
+          <Field key={contact.title}>
+            <h2>{contact.title}</h2>
+            {contact.emails.map(email => (
+              <a href={`mailto:${email}`} key={email}>
+                {email}
+              </a>
+            ))}
+          </Field>
+        ))}
+      </>
+    )
   );
 };
 
