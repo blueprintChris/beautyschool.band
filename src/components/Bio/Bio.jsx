@@ -1,19 +1,22 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import Spinner from '../Spinner/Spinner';
+import useApi from '../../hooks/useApi';
+import { bio } from '../../static/constants';
 import { Paragraph } from './styles';
 
 const Bio = () => {
-  const [bio, setBio] = useState('');
+  const { response, error, isLoading } = useApi('text/bio');
 
-  useEffect(() => {
-    (async () => {
-      const response = await fetch('https://got4yfo1jg.execute-api.eu-west-2.amazonaws.com/live/text/bio/bio');
-      const body = await response.text();
+  if (isLoading) {
+    return <Spinner text='Fetching bio...' />;
+  }
 
-      setBio(body);
-    })();
-  }, []);
-
-  return bio && <Paragraph>{bio}</Paragraph>;
+  return (
+    <Paragraph>
+      {error && bio}
+      {response && response.bio}
+    </Paragraph>
+  );
 };
 
 export default Bio;

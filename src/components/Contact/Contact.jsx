@@ -1,27 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
+import useApi from '../../hooks/useApi';
+import Spinner from '../Spinner/Spinner';
+import { contacts as defaultContacts } from '../../static/constants';
 import { Field } from './styles';
 
 const Contact = () => {
-  const [contacts, setContacts] = useState([]);
+  const { response: contacts, error, isLoading } = useApi('text/contact');
 
-  useEffect(() => {
-    (async () => {
-      const response = await fetch('https://got4yfo1jg.execute-api.eu-west-2.amazonaws.com/live/text/contact/contact');
-      const contact = await response.text();
-      const splitContact = contact.replace(/\r/g, '').split('\n');
-      const contacts = splitContact.map(item => {
-        const spl = item.split(':');
-        return { title: spl[0], emails: spl[1].split(',').map(item => item.trim()) };
-      });
-
-      setContacts(contacts);
-    })();
-  }, []);
+  if (isLoading) {
+    return <Spinner text='Fetching contact details...' />;
+  }
 
   return (
-    contacts.length > 0 && (
-      <>
-        {contacts.map(contact => (
+    <>
+      {error &
+        defaultContacts.map(contact => (
           <Field key={contact.title}>
             <h2>{contact.title}</h2>
             {contact.emails.map(email => (
@@ -31,8 +24,18 @@ const Contact = () => {
             ))}
           </Field>
         ))}
-      </>
-    )
+      {contacts &&
+        contacts.map(contact => (
+          <Field key={contact.title}>
+            <h2>{contact.title}</h2>
+            {contact.emails.map(email => (
+              <a href={`mailto:${email}`} key={email}>
+                {email}
+              </a>
+            ))}
+          </Field>
+        ))}
+    </>
   );
 };
 
