@@ -6,13 +6,8 @@ const Contact = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch('https://got4yfo1jg.execute-api.eu-west-2.amazonaws.com/live/text/contact/contact');
-      const contact = await response.text();
-      const splitContact = contact.replace(/\r/g, '').split('\n');
-      const contacts = splitContact.map(item => {
-        const spl = item.split(':');
-        return { title: spl[0], emails: spl[1].split(',').map(item => item.trim()) };
-      });
+      const response = await fetch('https://got4yfo1jg.execute-api.eu-west-2.amazonaws.com/live/content/text/contact');
+      const contacts = await response.json();
 
       setContacts(contacts);
     })();
