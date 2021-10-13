@@ -13,7 +13,7 @@ const Contact = () => {
 
   return (
     <>
-      {error &
+      {error &&
         defaultContacts.map(contact => (
           <Field key={contact.title}>
             <h2>{contact.title}</h2>

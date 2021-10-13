@@ -11,6 +11,7 @@ export const Actions = {
 };
 
 const apiReducer = (state, action) => {
+  // eslint-disable-next-line
   switch (action.type) {
     case Actions.LOADING:
       return {
