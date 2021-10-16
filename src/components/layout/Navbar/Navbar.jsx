@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useContext } from 'react';
-import MobileContext from '../../../context/MobileContext';
-import NavContext from '../../../context/NavContext';
+import { MobileContext, NavContext } from '../../../context';
 import { Hamburger, Socials } from '../../common';
 import { Wrapper, Nav, NavItem, NavWrapper, HamburgerWrapper } from './styles';
 
