@@ -1,6 +1,6 @@
 import React from 'react';
 import { Wrapper, Logo, LogoWrapper } from './styles';
-import Video from '../Video/Video';
+import { Video } from '..';
 
 const Hero = () => {
   return (

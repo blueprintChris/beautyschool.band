@@ -1,28 +1,17 @@
-import React, { useCallback, useEffect, useState } from 'react';
-import Hamburger from '../Hamburger/Hamburger';
-import Socials from '../Socials/Socials';
+import React, { useEffect, useState, useContext } from 'react';
+import MobileContext from '../../../context/MobileContext';
+import NavContext from '../../../context/NavContext';
+import { Hamburger, Socials } from '../../common';
 import { Wrapper, Nav, NavItem, NavWrapper, HamburgerWrapper } from './styles';
 
-const Navbar = props => {
+const Navbar = () => {
   const [scrolledPastHero, setScrolledPastHero] = useState(false);
-  const { setIsNavBarHidden, isNavBarHidden, isMobile, setIsMobile, refs } = props;
-
-  const getWindowDimensions = useCallback(() => {
-    const { innerWidth: width } = window;
-
-    if (width <= 800) {
-      setIsMobile(true);
-    } else {
-      setIsMobile(false);
-    }
-  }, [setIsMobile]);
+  const { refs, isNavBarHidden, setIsNavBarHidden } = useContext(NavContext);
+  const { isMobile } = useContext(MobileContext);
 
   useEffect(() => {
     window.addEventListener('scroll', listenToScroll);
-    window.addEventListener('resize', getWindowDimensions);
-
-    getWindowDimensions();
-  }, [getWindowDimensions]);
+  }, []);
 
   const listenToScroll = () => {
     const position = window.pageYOffset;

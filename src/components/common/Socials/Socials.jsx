@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconLink, NavWrapper } from '../Navbar/styles';
+import { IconLink, NavWrapper } from '../../layout/Navbar/styles';
 
 const Socials = props => {
   const { position } = props;
