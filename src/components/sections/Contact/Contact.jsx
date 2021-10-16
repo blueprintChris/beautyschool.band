@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import useApi from '../../../hooks/useApi';
-import NavContext from '../../../context/NavContext';
+import { NavContext } from '../../../context';
 import { ContentRow, ContentItem, Spinner } from '../../common';
 import { contacts as defaultContacts } from '../../../static/constants';
 import { Field } from './styles';

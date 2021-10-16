@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import NavContext from '../../../context/NavContext';
+import { NavContext } from '../../../context';
 import { ContentItem, ContentRow } from '../../common';
 import { Wrapper } from './styles';
 

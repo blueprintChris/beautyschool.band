@@ -1,9 +1,9 @@
 import React, { useContext } from 'react';
-import { ContentItem, ContentRow, Spinner } from '../../common';
+import { NavContext } from '../../../context';
 import useApi from '../../../hooks/useApi';
+import { ContentItem, ContentRow, Spinner } from '../../common';
 import { bio } from '../../../static/constants';
 import { Paragraph } from './styles';
-import NavContext from '../../../context/NavContext';
 
 const Bio = () => {
   const { refs } = useContext(NavContext);

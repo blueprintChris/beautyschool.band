@@ -1,13 +1,11 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
 import { Cookies, CookiesProvider } from 'react-cookie-banner';
-import Navbar from '../layout/Navbar/Navbar';
+import { NavContext, MobileContext } from '../../context';
+import { Navbar, MainContent } from '../layout';
 import { Hero } from '../common';
-import MainContent from '../layout/MainContent/MainContent';
 import { AppWrapper, GlobalStyle, CookieBannerStyled } from '../../styles';
 import { theme } from '../../theme';
-import NavContext from '../../context/NavContext';
-import MobileContext from '../../context/MobileContext';
 
 const cookies = new Cookies();
 
