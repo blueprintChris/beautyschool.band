@@ -9,11 +9,11 @@ const Merch = () => {
   const { response, error, isLoading } = useApi('images/merch');
 
   if (isLoading) {
-    return <Spinner text='Fetching merch...' />;
+    return <Spinner text='Fetching shop...' />;
   }
 
   return (
-    <ContentItem header='merch' ref={refs.merch}>
+    <ContentItem header='shop' ref={refs.merch}>
       <Link href='https://beautyschooluk.bandcamp.com/merch' target='_blank'>
         {error && <img src='images/merch-web-450.png' alt='Get Merch' />}
         {response && (

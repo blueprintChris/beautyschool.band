@@ -50,7 +50,7 @@ const Navbar = () => {
         <Nav>
           <NavWrapper>
             <NavItem onClick={() => handleNavClick('bio')}>bio</NavItem>
-            <NavItem onClick={() => handleNavClick('merch')}>merch</NavItem>
+            <NavItem onClick={() => handleNavClick('shop')}>shop</NavItem>
             <NavItem onClick={() => handleNavClick('listen')}>listen</NavItem>
             <NavItem onClick={() => handleNavClick('contact')}>contact</NavItem>
           </NavWrapper>

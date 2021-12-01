@@ -17,7 +17,7 @@ const App = () => {
 
   const refs = {
     bio: useRef(null),
-    merch: useRef(null),
+    shop: useRef(null),
     listen: useRef(null),
     watch: useRef(null),
     contact: useRef(null),
