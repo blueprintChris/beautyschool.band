@@ -4,7 +4,7 @@ import useApi from '../../../hooks/useApi';
 import { ContentItem, Spinner } from '../../common';
 import { Link } from './styles';
 
-const Merch = () => {
+const Shop = () => {
   const { refs } = useContext(NavContext);
   const { response, error, isLoading } = useApi('images/merch');
 
@@ -24,4 +24,4 @@ const Merch = () => {
   );
 };
 
-export default Merch;
+export default Shop;
