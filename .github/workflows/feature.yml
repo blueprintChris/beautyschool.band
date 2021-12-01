@@ -24,6 +24,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Install depenencies
         run: yarn install
 
@@ -34,5 +36,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v2
+
       - name: Deploy build to AWS S3
         run: aws s3 sync ./build/ s3://${{ secrets.AWS_S3_BUCKET_TEST }} --delete
