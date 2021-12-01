@@ -26,8 +26,8 @@ export const Wrapper = styled.div`
 export const Row = styled.div`
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
 
   @media (max-width: 1024px) {

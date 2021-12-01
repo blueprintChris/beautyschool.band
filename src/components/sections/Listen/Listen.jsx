@@ -9,7 +9,7 @@ const Listen = () => {
   return (
     <ContentItem header='listen' ref={refs.listen}>
       <SpotifyPlayer
-        src='https://open.spotify.com/embed/artist/46yPZXaKNR5nkEqMzhifG6?theme=1&view=list'
+        src='https://open.spotify.com/embed/artist/46yPZXaKNR5nkEqMzhifG6?theme=0&view=list'
         frameBorder='0'
         allowtransparency='true'
         allow='encrypted-media'

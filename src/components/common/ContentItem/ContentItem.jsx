@@ -1,12 +1,15 @@
 import React, { forwardRef } from 'react';
-import { Wrapper } from './styles';
+import { HeaderWrapper, Wrapper } from './styles';
 
 const ContentItem = forwardRef((props, ref) => {
-  const { header, children, id } = props;
+  const { header, img, imgAlt, children, id } = props;
 
   return (
     <Wrapper id={id} ref={ref}>
-      {header && <h1>{header}</h1>}
+      <HeaderWrapper>
+        {header && <h1>{header}</h1>}
+        {img && <img src={img} alt={imgAlt} />}
+      </HeaderWrapper>
       {children}
     </Wrapper>
   );

@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
 
 export const SpotifyPlayer = styled.iframe`
   width: 100%;
-  height: 450px;
+  height: 375px;
   max-height: 450px;
   overflow: auto;
 `;

@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import NavContext from '../../../context/NavContext';
 import useApi from '../../../hooks/useApi';
-import { ContentItem, ContentRow, Spinner } from '../../common';
+import { ContentItem, Spinner } from '../../common';
 import { Link } from './styles';
 
 const Shop = () => {
@@ -13,16 +13,14 @@ const Shop = () => {
   }
 
   return (
-    <ContentRow>
-      <ContentItem header='shop' ref={refs.merch}>
-        <Link href='https://beautyschooluk.bandcamp.com/merch' target='_blank'>
-          {error && <img src='images/merch-web-450.png' alt='Get Merch' />}
-          {response && (
-            <img src={`https://beauty-school-content.s3.eu-west-1.amazonaws.com/${response[0].Key}`} alt='Get Merch' />
-          )}
-        </Link>
-      </ContentItem>
-    </ContentRow>
+    <ContentItem header='shop' ref={refs.merch}>
+      <Link href='https://beautyschooluk.bandcamp.com/merch' target='_blank'>
+        {error && <img src='images/merch-web-450.png' alt='Get Merch' />}
+        {response && (
+          <img src={`https://beauty-school-content.s3.eu-west-1.amazonaws.com/${response[0].Key}`} alt='Get Merch' />
+        )}
+      </Link>
+    </ContentItem>
   );
 };
 

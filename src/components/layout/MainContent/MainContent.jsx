@@ -1,8 +1,8 @@
 import React from 'react';
 import { Wrapper, Content } from './styles';
-import { ContentRow } from '../../common';
-import { Bio, Contact, Watch, Shop, Listen, SocialsMobile } from '../../sections';
+import { Bio, Contact, Watch, Shop, Listen, SocialsMobile, TourDates } from '../../sections';
 import Footer from '../Footer/Footer';
+import { ContentRow } from '../../common';
 
 const MainContent = props => {
   const { isMobile } = props;
@@ -11,13 +11,24 @@ const MainContent = props => {
     <Wrapper>
       <Content>
         {isMobile && <SocialsMobile />}
-        <Bio />
+        <ContentRow>
+          <Bio />
+        </ContentRow>
         <ContentRow>
           <Listen />
         </ContentRow>
-        <Shop />
-        <Watch />
-        <Contact />
+        <ContentRow>
+          <TourDates />
+        </ContentRow>
+        <ContentRow>
+          <Shop />
+        </ContentRow>
+        <ContentRow>
+          <Watch />
+        </ContentRow>
+        <ContentRow>
+          <Contact />
+        </ContentRow>
         <Footer />
       </Content>
     </Wrapper>
