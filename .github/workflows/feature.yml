@@ -1,0 +1,30 @@
+name: Feature Build
+
+on:
+  pull_request:
+    branches: [master]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ${{ secrets.AWS_REGION }}
+
+      - name: yarn install dependencies
+        run: yarn install
+
+      - name: yarn build for production
+        run: yarn build
+
+      - name: deploy app to s3
+        run: aws s3 sync ./build/ s3://${{ secrets.AWS_S3_BUCKET_TEST }} --delete
