@@ -13,9 +13,9 @@ const MainContent = props => {
         {isMobile && <SocialsMobile />}
         <Bio />
         <ContentRow>
-          <Shop />
           <Listen />
         </ContentRow>
+        <Shop />
         <Watch />
         <Contact />
         <Footer />
