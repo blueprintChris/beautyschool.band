@@ -7,7 +7,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  configure:
     runs-on: ubuntu-latest
 
     steps:
@@ -20,11 +20,19 @@ jobs:
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: ${{ secrets.AWS_REGION }}
 
-      - name: yarn install dependencies
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Install depenencies
         run: yarn install
 
-      - name: yarn build for production
+      - name: Build for Production
         run: yarn build
 
-      - name: deploy app to s3
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Deploy build to AWS S3
         run: aws s3 sync ./build/ s3://${{ secrets.AWS_S3_BUCKET_TEST }} --delete
