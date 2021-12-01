@@ -14,6 +14,7 @@ const cookies = new Cookies();
 const App = () => {
   const [isNavBarHidden, setIsNavBarHidden] = useState(true);
   const [isMobile, setIsMobile] = useState(false);
+  const [scrollPosition, setScrollPosition] = useState(0);
 
   const refs = {
     bio: useRef(null),
@@ -33,15 +34,27 @@ const App = () => {
     }
   }, [setIsMobile]);
 
+  const getScrollPositionY = useCallback(() => {
+    const { scrollY } = window;
+
+    setScrollPosition(scrollY);
+  }, [setScrollPosition]);
+
   useEffect(() => {
     window.addEventListener('resize', getWindowDimensions);
+    window.addEventListener('scroll', getScrollPositionY);
 
     getWindowDimensions();
-  }, [getWindowDimensions]);
+
+    return () => {
+      window.removeEventListener('scroll', getScrollPositionY);
+      window.removeEventListener('resize', getWindowDimensions);
+    };
+  }, [getWindowDimensions, getScrollPositionY]);
 
   return (
     <ThemeProvider theme={theme}>
-      <NavContext.Provider value={{ refs, isNavBarHidden, setIsNavBarHidden }}>
+      <NavContext.Provider value={{ refs, isNavBarHidden, setIsNavBarHidden, scrollPosition }}>
         <MobileContext.Provider value={{ isMobile }}>
           <GlobalStyle isNavBarHidden={isNavBarHidden} isMobile={isMobile} />
           <AppWrapper>

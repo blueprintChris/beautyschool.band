@@ -17,22 +17,19 @@ export const LogoWrapper = styled.div`
   margin-right: auto;
   left: 0;
   right: 0;
-  top: 1rem;
+  top: 0;
+  bottom: 0;
 
   @media (max-width: 1400px) {
-    left: 10rem;
-    top: 1.4rem;
     font-size: 30px;
   }
 
-  @media (max-width: 1200px) {
-    display: none;
-  }
-
   @media (max-width: 800px) {
-    right: auto;
-    left: 2rem;
     display: flex;
+
+    img {
+      height: 100px;
+    }
   }
 `;
 
