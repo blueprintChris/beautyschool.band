@@ -4,9 +4,8 @@ export const Wrapper = styled.div`
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: flex-start;
-  padding-right: 2rem;
   box-sizing: border-box;
 
   h1 {
@@ -31,5 +30,16 @@ export const Wrapper = styled.div`
     &:last-child {
       padding-bottom: 0;
     }
+  }
+`;
+
+export const HeaderWrapper = styled.div`
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+
+  img {
+    max-height: 40px;
   }
 `;

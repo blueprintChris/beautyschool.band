@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { ContentItem, ContentRow, Spinner } from '../../common';
+import { ContentItem, Spinner } from '../../common';
 import useApi from '../../../hooks/useApi';
 import { bio } from '../../../static/constants';
 import { Paragraph } from './styles';
@@ -14,14 +14,12 @@ const Bio = () => {
   }
 
   return (
-    <ContentRow>
-      <ContentItem header='bio' ref={refs.bio}>
-        <Paragraph>
-          {error && bio}
-          {response && response.bio}
-        </Paragraph>
-      </ContentItem>
-    </ContentRow>
+    <ContentItem header='bio' ref={refs.bio}>
+      <Paragraph>
+        {error && bio}
+        {response && response.bio}
+      </Paragraph>
+    </ContentItem>
   );
 };
 

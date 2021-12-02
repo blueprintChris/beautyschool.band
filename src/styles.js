@@ -6,6 +6,7 @@ import { CookieBannerUniversal } from 'react-cookie-banner';
 export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 62.5%;
+    color: white;
   }
 
   body {

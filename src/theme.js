@@ -1,7 +1,7 @@
 export const theme = {
   colours: {
     darkGold: '#7f531f',
-    lightGold: '#C98F21',
+    lightGold: '#d5b01e',
     black: '#000',
     white: '#fff',
   },

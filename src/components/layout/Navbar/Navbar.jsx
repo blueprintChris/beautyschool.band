@@ -49,9 +49,10 @@ const Navbar = () => {
       <Wrapper scrolledPastHero={scrolledPastHero} isMobile={isMobile} isHidden={isNavBarHidden}>
         <Nav>
           <NavWrapper>
-            <NavItem onClick={() => handleNavClick('bio')}>bio</NavItem>
-            <NavItem onClick={() => handleNavClick('merch')}>merch</NavItem>
+            {/* <NavItem onClick={() => handleNavClick('bio')}>bio</NavItem> */}
             <NavItem onClick={() => handleNavClick('listen')}>listen</NavItem>
+            <NavItem onClick={() => handleNavClick('tour')}>tour</NavItem>
+            <NavItem onClick={() => handleNavClick('shop')}>shop</NavItem>
             <NavItem onClick={() => handleNavClick('contact')}>contact</NavItem>
           </NavWrapper>
           <Socials position={isMobile ? 'center' : 'flex-end'} />

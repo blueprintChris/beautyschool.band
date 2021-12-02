@@ -6,6 +6,10 @@ export const Field = styled.div`
   width: 100%;
   margin-bottom: 2rem;
 
+  &:last-child {
+    margin-bottom: 0;
+  }
+
   a {
     text-align: left;
     width: 100%;
