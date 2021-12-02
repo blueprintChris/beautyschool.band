@@ -11,7 +11,8 @@ export const NavItem = styled.button`
   border: none;
   font-size: ${props => props.theme.fonts.nav};
   font-family: BeautySchool, Futura, Arial, Helvetica, sans-serif;
-  margin-right: 2rem;
+  margin-right: 3rem;
+  padding: 0;
   transition: 0.2s ease;
   transition-property: color font-size;
   cursor: pointer;
@@ -28,6 +29,8 @@ export const IconLink = styled.a`
   background-color: white;
   mask-image: url(${props => `/images/svgs/${props.site}.svg`});
   -webkit-mask-image: url(${props => `/images/svgs/${props.site}.svg`});
+  mask-repeat: no-repeat;
+  -webkit-mask-repeat: no-repeat;
   margin-right: 3rem;
   transition: 0.2s ease;
   transition-property: background-color height;
@@ -53,8 +56,9 @@ export const NavWrapper = styled.div`
 
 export const Nav = styled.div`
   height: 100%;
-  width: 1440px;
-  max-width: 1440px;
+  /* width: 1440px;
+  max-width: 1440px; */
+  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -90,7 +94,7 @@ export const Wrapper = styled.div`
 
     &:hover {
       color: ${props =>
-        !props.isMobile && (props.scrolledPastHero ? props.theme.colours.darkGold : props.theme.colours.black)};
+        !props.isMobile && (props.scrolledPastHero ? props.theme.colours.darkGold : props.theme.colours.lightGold)};
     }
   }
 

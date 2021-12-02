@@ -1,11 +1,11 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import NavContext from '../../../context/NavContext';
 import { ContentItem } from '../../common';
-import { Event, EventInfo, EventDate, EventVenue, EventButton, StyledText } from './styles';
+import { Event, EventInfo, EventDate, EventVenue, EventButton } from './styles';
 
 const TourDates = () => {
   const { refs } = useContext(NavContext);
-  const [tourDates, setTourDates] = useState([]);
+  // const [tourDates, setTourDates] = useState([]);
 
   // useEffect(() => {
   //   (async () => {
@@ -20,7 +20,7 @@ const TourDates = () => {
 
   return (
     // <ContentItem header='tour' ref={refs.listen} img='images/songkick.png' imgAlt='Powered by Songkick'>
-    <ContentItem header='tour' ref={refs.listen}>
+    <ContentItem header='tour' ref={refs.tour}>
       <Event key='slamdunk'>
         <EventInfo>
           <EventDate>Fri 3rd June / Sat 4th June</EventDate>

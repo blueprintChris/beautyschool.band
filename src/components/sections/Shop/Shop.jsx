@@ -13,7 +13,7 @@ const Shop = () => {
   }
 
   return (
-    <ContentItem header='shop' ref={refs.merch}>
+    <ContentItem header='shop' ref={refs.shop}>
       <Link href='https://beautyschooluk.bandcamp.com/merch' target='_blank'>
         {error && <img src='images/merch-web-450.png' alt='Get Merch' />}
         {response && (
