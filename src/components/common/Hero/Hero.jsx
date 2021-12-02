@@ -14,7 +14,7 @@ const Hero = () => {
             src='images/logo.png'
             height='225'
             alt='Beauty School'
-            style={{ opacity: Math.max(0, Math.min(1, -scrollPosition / 300 + 2)) }}
+            style={{ opacity: Math.max(0, Math.min(1, -scrollPosition / 200 + 2)) }}
           />
         </Logo>
       </LogoWrapper>
