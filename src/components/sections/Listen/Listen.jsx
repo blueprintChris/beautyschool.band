@@ -9,14 +9,23 @@ const Listen = () => {
   return (
     <ContentItem header='listen' ref={refs.listen}>
       <SpotifyPlayer
-        src='https://open.spotify.com/embed/artist/46yPZXaKNR5nkEqMzhifG6?theme=0&view=list'
-        frameBorder='0'
-        allowtransparency='true'
-        allow='encrypted-media'
-        title='Spotify'
+        src='https://open.spotify.com/embed/track/2n0G4nnYm2GKZGtVkZbigd?utm_source=generator&theme=0'
+        height='80'
+        frameBorder='1'
+        allowfullscreen=''
+        allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
       />
     </ContentItem>
   );
 };
 
 export default Listen;
+
+<iframe
+  src='https://open.spotify.com/embed/track/2n0G4nnYm2GKZGtVkZbigd?utm_source=generator&theme=0'
+  width='100%'
+  height='80'
+  frameBorder='0'
+  allowfullscreen=''
+  allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'
+></iframe>;

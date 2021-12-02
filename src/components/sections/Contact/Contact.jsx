@@ -14,32 +14,30 @@ const Contact = () => {
   }
 
   return (
-    <ContentRow>
-      <ContentItem header='contact' ref={refs.contact}>
-        {error &&
-          defaultContacts.map(contact => (
-            <Field key={contact.title}>
-              <h2>{contact.title}</h2>
-              {contact.emails.map(email => (
-                <a href={`mailto:${email}`} key={email}>
-                  {email}
-                </a>
-              ))}
-            </Field>
-          ))}
-        {contacts &&
-          contacts.map(contact => (
-            <Field key={contact.title}>
-              <h2>{contact.title}</h2>
-              {contact.emails.map(email => (
-                <a href={`mailto:${email}`} key={email}>
-                  {email}
-                </a>
-              ))}
-            </Field>
-          ))}
-      </ContentItem>
-    </ContentRow>
+    <ContentItem header='contact' ref={refs.contact}>
+      {error &&
+        defaultContacts.map(contact => (
+          <Field key={contact.title}>
+            <h2>{contact.title}</h2>
+            {contact.emails.map(email => (
+              <a href={`mailto:${email}`} key={email}>
+                {email}
+              </a>
+            ))}
+          </Field>
+        ))}
+      {contacts &&
+        contacts.map(contact => (
+          <Field key={contact.title}>
+            <h2>{contact.title}</h2>
+            {contact.emails.map(email => (
+              <a href={`mailto:${email}`} key={email}>
+                {email}
+              </a>
+            ))}
+          </Field>
+        ))}
+    </ContentItem>
   );
 };
 
