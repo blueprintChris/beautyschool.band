@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext } from 'react';
 import NavContext from '../../../context/NavContext';
 import { ContentItem } from '../../common';
 import { Event, EventInfo, EventDate, EventVenue, EventButton } from './styles';
