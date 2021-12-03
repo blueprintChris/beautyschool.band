@@ -23,10 +23,22 @@ const TourDates = () => {
     <ContentItem header='tour' ref={refs.tour}>
       <Event key='slamdunk'>
         <EventInfo>
-          <EventDate>Fri 3rd June / Sat 4th June</EventDate>
-          <EventVenue>Slam Dunk Festival</EventVenue>
+          <EventDate>Fri 3rd June / Sat 4th June 2022</EventDate>
+          <EventVenue>Slam Dunk Festival 2022</EventVenue>
         </EventInfo>
         <EventButton href='https://slamdunk.seetickets.com/tour/slam-dunk-festival-2022?pre=pastbooker' target='_blank'>
+          Tickets
+        </EventButton>
+      </Event>
+      <Event key='keyclub'>
+        <EventInfo>
+          <EventDate>Fri 4th Feb 2022</EventDate>
+          <EventVenue>The Key Club, Leeds</EventVenue>
+        </EventInfo>
+        <EventButton
+          href='https://slamdunkmusic.seetickets.com/event/beauty-school/the-key-club/2161961'
+          target='_blank'
+        >
           Tickets
         </EventButton>
       </Event>
