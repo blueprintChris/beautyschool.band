@@ -51,7 +51,7 @@ const Navbar = () => {
           <NavWrapper>
             {/* <NavItem onClick={() => handleNavClick('bio')}>bio</NavItem> */}
             <NavItem onClick={() => handleNavClick('listen')}>listen</NavItem>
-            <NavItem onClick={() => handleNavClick('tour')}>tour</NavItem>
+            <NavItem onClick={() => handleNavClick('tickets')}>tickets</NavItem>
             <NavItem onClick={() => handleNavClick('shop')}>shop</NavItem>
             <NavItem onClick={() => handleNavClick('contact')}>contact</NavItem>
           </NavWrapper>

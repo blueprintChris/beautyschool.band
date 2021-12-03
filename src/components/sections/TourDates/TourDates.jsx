@@ -20,7 +20,7 @@ const TourDates = () => {
 
   return (
     // <ContentItem header='tour' ref={refs.listen} img='images/songkick.png' imgAlt='Powered by Songkick'>
-    <ContentItem header='tour' ref={refs.tour}>
+    <ContentItem header='tickets' ref={refs.tickets}>
       <Event key='slamdunk'>
         <EventInfo>
           <EventDate>Fri 3rd June / Sat 4th June 2022</EventDate>
