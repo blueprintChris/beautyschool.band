@@ -29,15 +29,24 @@ export const EventButton = styled.a`
   padding: 0 2rem;
   text-decoration: none;
   font-size: 1.8rem;
+
+  &:hover {
+    color: black;
+    background-color: white;
+  }
 `;
 
 export const Event = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid white;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
 `;
 
 export const StyledText = styled.p`
