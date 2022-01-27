@@ -21,18 +21,9 @@ const TourDates = () => {
   return (
     // <ContentItem header='tour' ref={refs.listen} img='images/songkick.png' imgAlt='Powered by Songkick'>
     <ContentItem header='tickets' ref={refs.tickets}>
-      <Event key='slamdunk'>
-        <EventInfo>
-          <EventDate>Fri 3rd June / Sat 4th June 2022</EventDate>
-          <EventVenue>Slam Dunk Festival 2022</EventVenue>
-        </EventInfo>
-        <EventButton href='https://slamdunk.seetickets.com/tour/slam-dunk-festival-2022?pre=pastbooker' target='_blank'>
-          Tickets
-        </EventButton>
-      </Event>
       <Event key='keyclub'>
         <EventInfo>
-          <EventDate>Fri 4th Feb 2022</EventDate>
+          <EventDate>Sat 9th April, 2022</EventDate>
           <EventVenue>The Key Club, Leeds</EventVenue>
         </EventInfo>
         <EventButton
@@ -42,6 +33,16 @@ const TourDates = () => {
           Tickets
         </EventButton>
       </Event>
+      <Event key='slamdunk'>
+        <EventInfo>
+          <EventDate>Fri 3rd June / Sat 4th June, 2022</EventDate>
+          <EventVenue>Slam Dunk Festival 2022</EventVenue>
+        </EventInfo>
+        <EventButton href='https://slamdunk.seetickets.com/tour/slam-dunk-festival-2022?pre=pastbooker' target='_blank'>
+          Tickets
+        </EventButton>
+      </Event>
+
       {/* {tourDates.length > 1 ? (
         tourDates.map(event => (
           <Event key={event.id}>
