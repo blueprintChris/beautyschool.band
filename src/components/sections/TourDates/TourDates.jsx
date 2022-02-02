@@ -5,18 +5,18 @@ import { Event, EventInfo, EventDate, EventVenue, EventButton } from './styles';
 
 const events = [
   {
-    date: 'Mon 14 Mar, 2022 (w/ Trash Boat)',
-    venue: 'Polar Bear Music Club, Hull',
+    date: 'Mon 14th March, 2022',
+    venue: 'Polar Bear Music Club, Hull (w/ Trash Boat, Modern Error)',
     ticketLink: 'https://www.seetickets.com/event/trash-boat/polar-bear-music-club/2156669',
   },
   {
-    date: 'Tue 15 Mar 2022 (w/ Trash Boat)',
-    venue: 'The Crescent, York',
+    date: 'Tue 15th March, 2022',
+    venue: 'The Crescent, York (w/ Trash Boat, Modern Error)',
     ticketLink: 'https://www.seetickets.com/event/trash-boat/the-crescent/2156662',
   },
   {
-    date: 'Wed 16 Mar 2022 (w/ Trash Boat)',
-    venue: 'Corporation, Sheffield',
+    date: 'Wed 16th March, 2022',
+    venue: 'Corporation, Sheffield (w/ Trash Boat, Modern Error)',
     ticketLink: 'https://www.corporation.org.uk/gig/2549',
   },
   {
@@ -26,10 +26,12 @@ const events = [
   },
   {
     date: 'Fri 3rd June / Sat 4th June, 2022',
-    venue: 'Slam Dunk Festival, 2022',
+    venue: 'Slam Dunk Festival, North - Leeds, Temple Newsam / South - Hatfield Park',
     ticketLink: 'https://slamdunk.seetickets.com/tour/slam-dunk-festival-2022?pre=pastbooker',
   },
 ];
+
+// const songkickKey = process.env.REACT_APP_SONGKICK_KEY;
 
 const TourDates = () => {
   const { refs } = useContext(NavContext);
@@ -38,16 +40,19 @@ const TourDates = () => {
   // useEffect(() => {
   //   (async () => {
   //     const response = await fetch(
-  //       'https://api.songkick.com/api/3.0/artists/1084890/gigography.json?apikey=gzX1gYv5Sf25ENIj'
+  //       'https://api.songkick.com/api/3.0/artists/1084890/calendar.json?apikey=gzX1gYv5Sf25ENIj'
   //     );
   //     const data = await response.json();
+  //     console.log(data);
   //     const upcomingShows = data.resultsPage.results.event.filter(event => new Date(event.start.date) > new Date());
+  //     console.log(upcomingShows);
   //     setTourDates(upcomingShows);
   //   })();
   // }, []);
 
   return (
     // <ContentItem header='tour' ref={refs.listen} img='images/songkick.png' imgAlt='Powered by Songkick'>
+
     <ContentItem header='tickets' ref={refs.tickets}>
       {events.map((event, index) => (
         <Event key={index}>
@@ -65,8 +70,10 @@ const TourDates = () => {
         tourDates.map(event => (
           <Event key={event.id}>
             <EventInfo>
-              <EventDate>{new Date(event.start.date).toDateString()}</EventDate>
-              <EventVenue>{event.venue.displayName}</EventVenue>
+              <EventDate>{format(new Date(event.start.date), 'EEE do MMM, yyyy')}</EventDate>
+              <EventVenue>
+                {event.venue.displayName}, {event.location.city}
+              </EventVenue>
             </EventInfo>
             <EventButton href={event.uri} target='_blank'>
               Tickets

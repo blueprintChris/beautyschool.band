@@ -25,6 +25,8 @@ jobs:
 
       - name: Build app
         run: yarn build
+        env:
+          REACT_APP_SONGKICK_KEY: ${{ secrets.SONGKICK_API_KEY }}
 
       - name: Deploy app to S3
         run: aws s3 sync ./build/ s3://${{ secrets.AWS_S3_BUCKET_TEST }} --delete
