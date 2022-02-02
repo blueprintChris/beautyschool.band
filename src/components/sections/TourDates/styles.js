@@ -29,6 +29,9 @@ export const EventButton = styled.a`
   padding: 0 2rem;
   text-decoration: none;
   font-size: 1.8rem;
+  max-height: 3.6rem;
+  min-height: 3.6rem;
+  margin-left: 1rem;
 
   &:hover {
     color: black;
@@ -40,12 +43,13 @@ export const Event = styled.div`
   width: 100%;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
-  padding-bottom: 1rem;
+  align-items: center;
+  padding: 1rem 0;
   border-bottom: 1px solid white;
+  min-height: 5.2rem;
 
-  &:last-child {
-    margin-bottom: 0;
+  &:nth-child(2) {
+    padding-top: 0;
   }
 `;
 
