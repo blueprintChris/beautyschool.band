@@ -14,7 +14,7 @@ const Watch = props => {
         <iframe
           width='100%'
           height={isMobile ? '240' : '560'}
-          src={`https://www.youtube.com/embed/wJElPbiUMIk`}
+          src={`https://www.youtube.com/embed/7uDiJatHe1M`}
           title='YouTube video player'
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
@@ -25,7 +25,7 @@ const Watch = props => {
         <iframe
           width='100%'
           height={isMobile ? '240' : '560'}
-          src={`https://www.youtube.com/embed/7uDiJatHe1M`}
+          src={`https://www.youtube.com/embed/wJElPbiUMIk`}
           title='YouTube video player'
           frameBorder='0'
           allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
