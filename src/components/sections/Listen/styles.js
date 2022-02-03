@@ -8,4 +8,8 @@ export const SpotifyPlayer = styled.iframe`
   width: 100%;
   overflow: auto;
   border: 1px solid rgba(255, 255, 255, 0.5);
+
+  &:nth-child(2) {
+    margin-bottom: 1rem;
+  }
 `;

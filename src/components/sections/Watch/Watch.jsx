@@ -21,6 +21,17 @@ const Watch = props => {
           allowFullScreen
         />
       </Wrapper>
+      <Wrapper>
+        <iframe
+          width='100%'
+          height={isMobile ? '240' : '560'}
+          src={`https://www.youtube.com/embed/7uDiJatHe1M`}
+          title='YouTube video player'
+          frameBorder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allowFullScreen
+        />
+      </Wrapper>
     </ContentItem>
   );
 };
