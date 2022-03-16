@@ -5,16 +5,6 @@ import { Event, EventInfo, EventDate, EventVenue, EventButton } from './styles';
 
 const events = [
   {
-    date: 'Mon 14th March, 2022',
-    venue: 'Polar Bear Music Club, Hull (w/ Trash Boat, Modern Error)',
-    ticketLink: 'https://www.seetickets.com/event/trash-boat/polar-bear-music-club/2156669',
-  },
-  {
-    date: 'Tue 15th March, 2022',
-    venue: 'The Crescent, York (w/ Trash Boat, Modern Error)',
-    ticketLink: 'https://www.seetickets.com/event/trash-boat/the-crescent/2156662',
-  },
-  {
     date: 'Wed 16th March, 2022',
     venue: 'Corporation, Sheffield (w/ Trash Boat, Modern Error)',
     ticketLink: 'https://www.corporation.org.uk/gig/2549',
@@ -53,6 +43,12 @@ const events = [
     date: 'Sun 2nd Oct, 2022',
     venue: 'The Deaf Institute, Manchester (w/ The Dangerous Summer)',
     ticketLink: 'https://www.seetickets.com/event/the-dangerous-summer/the-deaf-institute/2012606',
+  },
+  {
+    date: 'Mon 3rd Oct, 2022',
+    venue: "King Tut's Wah Wah Hut, Glasgow (w/ The Dangerous Summer)",
+    ticketLink:
+      'https://www.ticketweb.uk/event/the-dangerous-summer-king-tuts-wah-wah-hut-tickets/11272915?pl=kingtuts&_ga=2.244202821.1994441152.1647431058-1580812645.1647431058',
   },
   {
     date: 'Tue 4th Oct, 2022',
