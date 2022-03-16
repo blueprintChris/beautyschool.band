@@ -29,6 +29,41 @@ const events = [
     venue: 'Slam Dunk Festival, North - Leeds, Temple Newsam / South - Hatfield Park',
     ticketLink: 'https://slamdunk.seetickets.com/tour/slam-dunk-festival-2022?pre=pastbooker',
   },
+  {
+    date: 'Tue 27th Sep, 2022',
+    venue: 'The Flapper, Birmingham (w/ The Dangerous Summer)',
+    ticketLink: 'https://www.seetickets.com/event/the-dangerous-summer/the-flapper/2016503',
+  },
+  {
+    date: 'Thu 29th Sep, 2022',
+    venue: 'Thekla, Bristol (w/ The Dangerous Summer)',
+    ticketLink: 'https://www.seetickets.com/event/the-dangerous-summer/thekla/2013614',
+  },
+  {
+    date: 'fri 30th Sep, 2022',
+    venue: 'The Key Club, Leeds (w/ The Dangerous Summer)',
+    ticketLink: 'https://www.seetickets.com/event/the-dangerous-summer/the-key-club/2015033',
+  },
+  {
+    date: 'Sat 1st Oct, 2022',
+    venue: 'Think Tank?, Newcastle (w/ The Dangerous Summer)',
+    ticketLink: 'https://www.seetickets.com/event/the-dangerous-summer/think-tank-/2016893',
+  },
+  {
+    date: 'Sun 2nd Oct, 2022',
+    venue: 'The Deaf Institute, Manchester (w/ The Dangerous Summer)',
+    ticketLink: 'https://www.seetickets.com/event/the-dangerous-summer/the-deaf-institute/2012606',
+  },
+  {
+    date: 'Tue 4th Oct, 2022',
+    venue: 'Rescue Rooms, Nottingham (w/ The Dangerous Summer)',
+    ticketLink: 'https://www.seetickets.com/event/the-dangerous-summer/rescue-rooms/2013615',
+  },
+  {
+    date: 'Wed 5th Oct, 2022',
+    venue: 'The Underworld, London (w/ The Dangerous Summer)',
+    ticketLink: 'https://www.seetickets.com/event/the-dangerous-summer/the-underworld/2013145',
+  },
 ];
 
 // const songkickKey = process.env.REACT_APP_SONGKICK_KEY;
