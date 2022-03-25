@@ -1,7 +1,8 @@
-import React, { useContext } from 'react';
+import { format } from 'date-fns';
+import React, { useContext, useEffect, useState } from 'react';
 import NavContext from '../../../context/NavContext';
 import { ContentItem } from '../../common';
-import { Event, EventInfo, EventDate, EventVenue, EventButton } from './styles';
+import { Event, EventInfo, EventDate, EventVenue, EventButton, StyledText } from './styles';
 
 const events = [
   {
@@ -62,30 +63,25 @@ const events = [
   },
 ];
 
-// const songkickKey = process.env.REACT_APP_SONGKICK_KEY;
+const songkickKey = process.env.REACT_APP_SONGKICK_KEY;
 
 const TourDates = () => {
   const { refs } = useContext(NavContext);
-  // const [tourDates, setTourDates] = useState([]);
+  const [tourDates, setTourDates] = useState([]);
 
-  // useEffect(() => {
-  //   (async () => {
-  //     const response = await fetch(
-  //       'https://api.songkick.com/api/3.0/artists/1084890/calendar.json?apikey=gzX1gYv5Sf25ENIj'
-  //     );
-  //     const data = await response.json();
-  //     console.log(data);
-  //     const upcomingShows = data.resultsPage.results.event.filter(event => new Date(event.start.date) > new Date());
-  //     console.log(upcomingShows);
-  //     setTourDates(upcomingShows);
-  //   })();
-  // }, []);
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(`https://api.songkick.com/api/3.0/artists/1084890/calendar.json?apikey=${songkickKey}`);
+      const data = await response.json();
+      const upcomingShows = data.resultsPage.results.event.filter(event => new Date(event.start.date) > new Date());
+      setTourDates(upcomingShows);
+    })();
+  }, []);
 
   return (
-    // <ContentItem header='tour' ref={refs.listen} img='images/songkick.png' imgAlt='Powered by Songkick'>
-
-    <ContentItem header='tickets' ref={refs.tickets}>
-      {events.map((event, index) => (
+    <ContentItem header='tour' ref={refs.tickets} img='images/songkick.png' imgAlt='Powered by Songkick'>
+      {/* // <ContentItem header='tickets' ref={refs.tickets}> */}
+      {/* {events.map((event, index) => (
         <Event key={index}>
           <EventInfo>
             <EventDate>{event.date}</EventDate>
@@ -95,9 +91,9 @@ const TourDates = () => {
             Tickets
           </EventButton>
         </Event>
-      ))}
+      ))} */}
 
-      {/* {tourDates.length > 1 ? (
+      {tourDates.length > 1 ? (
         tourDates.map(event => (
           <Event key={event.id}>
             <EventInfo>
@@ -113,7 +109,7 @@ const TourDates = () => {
         ))
       ) : (
         <StyledText>Check back later for upcoming shows!</StyledText>
-      )} */}
+      )}
     </ContentItem>
   );
 };
