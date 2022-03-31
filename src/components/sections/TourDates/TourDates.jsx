@@ -13,28 +13,19 @@ const TourDates = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch(`${songkickUrl}${songkickKey}`);
-      const data = await response.json();
-      const upcomingShows = data.resultsPage.results.event.filter(event => new Date(event.start.date) > new Date());
-      setTourDates(upcomingShows);
+      try {
+        const response = await fetch(`${songkickUrl}${songkickKey}`);
+        const data = await response.json();
+        const upcomingShows = data.resultsPage.results.event.filter(event => new Date(event.start.date) > new Date());
+        setTourDates(upcomingShows);
+      } catch (err) {
+        console.error(err);
+      }
     })();
   }, []);
 
   return (
     <ContentItem header='tour' ref={refs.tickets} img='images/songkick.png' imgAlt='Powered by Songkick'>
-      {/* // <ContentItem header='tickets' ref={refs.tickets}> */}
-      {/* {events.map((event, index) => (
-        <Event key={index}>
-          <EventInfo>
-            <EventDate>{event.date}</EventDate>
-            <EventVenue>{event.venue}</EventVenue>
-          </EventInfo>
-          <EventButton href={event.ticketLink} target='_blank'>
-            Tickets
-          </EventButton>
-        </Event>
-      ))} */}
-
       {tourDates.length > 1 ? (
         tourDates.map(event => (
           <Event key={event.id}>
