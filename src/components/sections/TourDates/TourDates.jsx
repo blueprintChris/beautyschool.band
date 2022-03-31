@@ -7,6 +7,9 @@ import { Event, EventInfo, EventDate, EventVenue, EventButton, StyledText } from
 const songkickKey = process.env.REACT_APP_SONGKICK_KEY;
 const songkickUrl = process.env.REACT_APP_SONGKICK_URL;
 
+console.log('SONGKICK KEY: ', songkickKey);
+console.log('SONGKICK URL: ', songkickUrl);
+
 const TourDates = () => {
   const { refs } = useContext(NavContext);
   const [tourDates, setTourDates] = useState([]);
