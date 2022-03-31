@@ -19,6 +19,7 @@ jobs:
         run: yarn build
         env:
           REACT_APP_SONGKICK_KEY: ${{ secrets.SONGKICK_API_KEY }}
+          REACT_APP_SONGKICK_URL: ${{ secrets.SONGKICK_URL }}
       - name: Upload production-ready build files
         uses: actions/upload-artifact@v2
         with:
