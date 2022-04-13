@@ -14,6 +14,17 @@ const Watch = props => {
         <iframe
           width='100%'
           height={isMobile ? '240' : '560'}
+          src={`https://www.youtube.com/embed/0YXrvJbo7x4`}
+          title='YouTube video player'
+          frameBorder='0'
+          allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture'
+          allowFullScreen
+        />
+      </Wrapper>
+      <Wrapper>
+        <iframe
+          width='100%'
+          height={isMobile ? '240' : '560'}
           src={`https://www.youtube.com/embed/7uDiJatHe1M`}
           title='YouTube video player'
           frameBorder='0'
