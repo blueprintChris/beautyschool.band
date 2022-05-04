@@ -4,7 +4,7 @@ import NavContext from '../../../context/NavContext';
 import { ContentItem } from '../../common';
 import { Wrapper } from './styles';
 
-const Watch = props => {
+const Watch = () => {
   const { refs } = useContext(NavContext);
   const { isMobile } = useContext(MobileContext);
 
