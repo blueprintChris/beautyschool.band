@@ -10,7 +10,7 @@ const Listen = () => {
     <ContentItem header='listen' ref={refs.listen}>
       <SpotifyPlayer
         src='https://open.spotify.com/embed/artist/46yPZXaKNR5nkEqMzhifG6?utm_source=generator'
-        height='200'
+        height='210'
         frameBorder='1'
         allowfullscreen=''
         allow='autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture'

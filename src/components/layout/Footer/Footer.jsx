@@ -14,9 +14,9 @@ const Footer = () => {
           </a>
         </ImgWrapper>
         <TextWrapper>
-          <span>© 2021 beauty school</span>
+          <span>© 2022 beauty school</span>
           <span>
-            &nbsp; website by <a href='mailto:me@blueprintchris.co.uk'>blueprintchris</a>
+            &nbsp; website by <a href='https://instagram.com/blueprintchris'>blueprintchris</a>
           </span>
         </TextWrapper>
       </Container>
