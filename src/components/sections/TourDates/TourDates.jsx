@@ -1,11 +1,11 @@
 import { format } from 'date-fns';
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import NavContext from '../../../context/NavContext';
 import { ContentItem } from '../../common';
 import { Event, EventInfo, EventDate, EventVenue, EventButton, StyledText } from './styles';
 
-const songkickKey = process.env.REACT_APP_SONGKICK_KEY;
-const songkickUrl = process.env.REACT_APP_SONGKICK_URL;
+// const songkickKey = process.env.REACT_APP_SONGKICK_KEY;
+// const songkickUrl = process.env.REACT_APP_SONGKICK_URL;
 
 const wonderYearsTourDates = [
   {
@@ -103,20 +103,20 @@ const wonderYearsTourDates = [
 
 const TourDates = () => {
   const { refs } = useContext(NavContext);
-  const [tourDates, setTourDates] = useState([]);
+  // const [tourDates, setTourDates] = useState([]);
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const response = await fetch(`${songkickUrl}${songkickKey}`);
-        const data = await response.json();
-        const upcomingShows = data.resultsPage.results.event.filter(event => new Date(event.start.date) > new Date());
-        setTourDates(upcomingShows);
-      } catch (err) {
-        console.error(err);
-      }
-    })();
-  }, []);
+  // useEffect(() => {
+  //   (async () => {
+  //     try {
+  //       const response = await fetch(`${songkickUrl}${songkickKey}`);
+  //       const data = await response.json();
+  //       const upcomingShows = data.resultsPage.results.event.filter(event => new Date(event.start.date) > new Date());
+  //       setTourDates(upcomingShows);
+  //     } catch (err) {
+  //       console.error(err);
+  //     }
+  //   })();
+  // }, []);
 
   return (
     <ContentItem header='tour' ref={refs.tickets} img='images/songkick.png' imgAlt='Powered by Songkick'>
