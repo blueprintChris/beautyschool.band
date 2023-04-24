@@ -21,32 +21,32 @@ const newDates = [
     },
     uri: 'https://teddyrocks.co.uk/tickets',
   },
-  {
-    id: 1,
-    start: {
-      date: '2023-05-30',
-    },
-    venue: {
-      displayName: 'Essigrabrik',
-    },
-    location: {
-      city: 'Cologne',
-    },
-    uri: 'https://www.eventim.de/event/less-than-jake-essigfabrik-16761224/',
-  },
-  {
-    id: 2,
-    start: {
-      date: '2023-05-31',
-    },
-    venue: {
-      displayName: 'Backstage Werk',
-    },
-    location: {
-      city: 'Munich',
-    },
-    uri: 'https://www.eventim.de/event/less-than-jake-backstage-muenchen-16753516/',
-  },
+  // {
+  //   id: 1,
+  //   start: {
+  //     date: '2023-05-30',
+  //   },
+  //   venue: {
+  //     displayName: 'Essigrabrik',
+  //   },
+  //   location: {
+  //     city: 'Cologne',
+  //   },
+  //   uri: 'https://www.eventim.de/event/less-than-jake-essigfabrik-16761224/',
+  // },
+  // {
+  //   id: 2,
+  //   start: {
+  //     date: '2023-05-31',
+  //   },
+  //   venue: {
+  //     displayName: 'Backstage Werk',
+  //   },
+  //   location: {
+  //     city: 'Munich',
+  //   },
+  //   uri: 'https://www.eventim.de/event/less-than-jake-backstage-muenchen-16753516/',
+  // },
   {
     id: 3,
     start: {
@@ -86,19 +86,19 @@ const newDates = [
     },
     uri: 'https://downloadfestival.co.uk/tickets/',
   },
-  {
-    id: 6,
-    start: {
-      date: '2023-07-07',
-    },
-    venue: {
-      displayName: '2000 Trees Festival',
-    },
-    location: {
-      city: 'Cheltenham',
-    },
-    uri: 'https://2000trees.co.uk/tickets',
-  },
+  // {
+  //   id: 6,
+  //   start: {
+  //     date: '2023-07-07',
+  //   },
+  //   venue: {
+  //     displayName: '2000 Trees Festival',
+  //   },
+  //   location: {
+  //     city: 'Cheltenham',
+  //   },
+  //   uri: 'https://2000trees.co.uk/tickets',
+  // },
 ];
 
 const TourDates = () => {
