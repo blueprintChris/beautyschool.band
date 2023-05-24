@@ -1,15 +1,12 @@
 import React, { useRef, useState, useCallback, useEffect } from 'react';
 import { ThemeProvider } from 'styled-components';
-import { Cookies, CookiesProvider } from 'react-cookie-banner';
 import Navbar from '../layout/Navbar/Navbar';
 import { Hero } from '../common';
 import MainContent from '../layout/MainContent/MainContent';
-import { AppWrapper, GlobalStyle, CookieBannerStyled } from '../../styles';
+import { AppWrapper, GlobalStyle } from '../../styles';
 import { theme } from '../../theme';
 import NavContext from '../../context/NavContext';
 import MobileContext from '../../context/MobileContext';
-
-const cookies = new Cookies();
 
 const App = () => {
   const [isNavBarHidden, setIsNavBarHidden] = useState(true);
@@ -61,7 +58,7 @@ const App = () => {
           <AppWrapper>
             <Navbar />
             <Hero />
-            <CookiesProvider cookies={cookies}>
+            {/* <CookiesProvider cookies={cookies}>
               <CookieBannerStyled
                 dismissOnScroll={false}
                 buttonMessage='Accept all cookies'
@@ -77,7 +74,7 @@ const App = () => {
                   </a>
                 }
               />
-            </CookiesProvider>
+            </CookiesProvider> */}
             <MainContent isMobile={isMobile} refs={refs} />
           </AppWrapper>
         </MobileContext.Provider>

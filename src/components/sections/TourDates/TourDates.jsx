@@ -103,6 +103,19 @@ const newDates = [
     },
     uri: 'https://downloadfestival.co.uk/tickets/',
   },
+  {
+    id: 6,
+    start: {
+      date: '2023-08-11',
+    },
+    venue: {
+      displayName: 'The Key Club',
+    },
+    location: {
+      city: 'Leeds',
+    },
+    uri: 'https://www.seetickets.com/event/beauty-school/the-key-club/2672076',
+  },
 ];
 
 const TourDates = () => {
