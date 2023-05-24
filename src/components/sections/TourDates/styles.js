@@ -14,8 +14,21 @@ export const EventDate = styled.div`
   font-size: 1.8rem;
 `;
 
+export const EventSupport = styled.div`
+  display: -webkit-box;
+  font-size: 1.2rem;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+`;
+
 export const EventVenue = styled.div`
   font-size: 1.4rem;
+  display: -webkit-box;
+  /* max-width: 300px; */
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 `;
 
 export const EventButton = styled.a`

@@ -2,7 +2,7 @@ import { format } from 'date-fns';
 import React, { useContext, useEffect, useState } from 'react';
 import NavContext from '../../../context/NavContext';
 import { ContentItem } from '../../common';
-import { Event, EventInfo, EventDate, EventVenue, EventButton, StyledText } from './styles';
+import { Event, EventInfo, EventDate, EventVenue, EventButton, StyledText, EventSupport } from './styles';
 
 const songkickKey = process.env.REACT_APP_SONGKICK_KEY;
 const songkickUrl = process.env.REACT_APP_SONGKICK_URL;
@@ -21,32 +21,44 @@ const newDates = [
     },
     uri: 'https://teddyrocks.co.uk/tickets',
   },
-  // {
-  //   id: 1,
-  //   start: {
-  //     date: '2023-05-30',
-  //   },
-  //   venue: {
-  //     displayName: 'Essigrabrik',
-  //   },
-  //   location: {
-  //     city: 'Cologne',
-  //   },
-  //   uri: 'https://www.eventim.de/event/less-than-jake-essigfabrik-16761224/',
-  // },
-  // {
-  //   id: 2,
-  //   start: {
-  //     date: '2023-05-31',
-  //   },
-  //   venue: {
-  //     displayName: 'Backstage Werk',
-  //   },
-  //   location: {
-  //     city: 'Munich',
-  //   },
-  //   uri: 'https://www.eventim.de/event/less-than-jake-backstage-muenchen-16753516/',
-  // },
+  {
+    id: 1,
+    start: {
+      date: '2023-05-30',
+    },
+    performance: [
+      { displayName: 'Less Than Jake' },
+      {
+        displayName: 'Bowling For Soup',
+      },
+    ],
+    venue: {
+      displayName: 'Essigfabrik',
+    },
+    location: {
+      city: 'Cologne',
+    },
+    uri: 'https://www.eventim.de/event/less-than-jake-essigfabrik-16761224/',
+  },
+  {
+    id: 2,
+    start: {
+      date: '2023-05-31',
+    },
+    performance: [
+      { displayName: 'Less Than Jake' },
+      {
+        displayName: 'Bowling For Soup',
+      },
+    ],
+    venue: {
+      displayName: 'Backstage Werk',
+    },
+    location: {
+      city: 'Munich',
+    },
+    uri: 'https://www.eventim.de/event/less-than-jake-backstage-muenchen-16753516/',
+  },
   {
     id: 3,
     start: {
@@ -91,19 +103,19 @@ const newDates = [
     },
     uri: 'https://downloadfestival.co.uk/tickets/',
   },
-  // {
-  //   id: 6,
-  //   start: {
-  //     date: '2023-07-07',
-  //   },
-  //   venue: {
-  //     displayName: '2000 Trees Festival',
-  //   },
-  //   location: {
-  //     city: 'Cheltenham',
-  //   },
-  //   uri: 'https://2000trees.co.uk/tickets',
-  // },
+  {
+    id: 6,
+    start: {
+      date: '2023-08-11',
+    },
+    venue: {
+      displayName: 'The Key Club',
+    },
+    location: {
+      city: 'Leeds',
+    },
+    uri: 'https://www.seetickets.com/event/beauty-school/the-key-club/2672076',
+  },
 ];
 
 const TourDates = () => {
@@ -116,11 +128,16 @@ const TourDates = () => {
         const response = await fetch(`${songkickUrl}${songkickKey}`);
         const data = await response.json();
         const upcomingShows = data.resultsPage.results.event.filter(event => new Date(event.start.date) > new Date());
-        console.log(upcomingShows);
         upcomingShows.push(...newDates);
 
         upcomingShows.sort((a, b) => {
           return new Date(a.start.date) - new Date(b.start.date);
+        });
+
+        upcomingShows.forEach(show => {
+          if (show.performance) {
+            show.performance = show.performance.filter(b => b.displayName !== 'Beauty School');
+          }
         });
 
         setTourDates(upcomingShows);
@@ -138,12 +155,16 @@ const TourDates = () => {
             <EventInfo>
               <EventDate>{format(new Date(event.start.date), 'EEE do MMM, yyyy')}</EventDate>
               {event.performance ? (
-                <EventVenue>
-                  w/
-                  {event.performance.map(band => {
-                    return band.displayName !== 'Beauty School' ? <span> {band.displayName} </span> : null;
-                  })}
-                </EventVenue>
+                <EventSupport>
+                  {event.performance.map((band, i) =>
+                    band.displayName !== 'Beauty School' ? (
+                      <span key={i}>
+                        {band.displayName}
+                        {event.performance.length > 1 && i !== event.performance.length - 1 && `, `}
+                      </span>
+                    ) : null
+                  )}
+                </EventSupport>
               ) : null}
               <EventVenue>
                 {event.venue.displayName}, {event.location.city}
