@@ -33,7 +33,7 @@ const newDates = [
       },
     ],
     venue: {
-      displayName: 'Essigrabrik',
+      displayName: 'Essigfabrik',
     },
     location: {
       city: 'Cologne',
