@@ -8,6 +8,7 @@ const songkickKey = process.env.REACT_APP_SONGKICK_KEY;
 const songkickUrl = process.env.REACT_APP_SONGKICK_URL;
 
 /** Example tour date array */
+
 // const newDates = [
 //   {
 //     id: 0,
